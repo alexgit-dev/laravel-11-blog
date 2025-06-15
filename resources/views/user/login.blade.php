@@ -17,7 +17,9 @@
 
 <body class="login-page bg-body-secondary">
 <div class="login-box">
-    <div class="login-logo"> <a href="../index2.html"><b>Admin</b>LTE</a> </div>
+    <div class="login-logo">
+        <b>Admin</b>LTE
+    </div>
     <div class="card">
         <div class="card-body login-card-body">
             <p class="login-box-msg">Sign in to start your session</p>
@@ -38,7 +40,7 @@
                 </div>
             @endif
 
-            <form action="{{ route('authenticate') }}" method="post">
+            <form action="{{ route('login.authenticate') }}" method="post">
                 @csrf
 
                 <div class="input-group mb-3">

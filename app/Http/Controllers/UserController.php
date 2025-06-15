@@ -26,7 +26,9 @@ class UserController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('admin.main.index');
+            // return redirect()->intended('admin.main.index');
+            return redirect()->route('admin.main.index');
+
         }
 
         return back()

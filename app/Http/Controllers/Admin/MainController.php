@@ -23,6 +23,8 @@ class MainController extends Controller
 //            'password' => '123456',
 //        ]);
 
+        // dump(\auth()->user());
+
         return view('admin.index');
     }
 }
