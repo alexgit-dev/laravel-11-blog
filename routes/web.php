@@ -16,9 +16,11 @@ Route::middleware('guest')->group(function () {
         ->name('login.authenticate');
 });
 
-Route::prefix('admin')->group(function () {
+
+// middleware('isAdmin') зарегистрирован в bootstrap/app.php
+Route::prefix('admin')->middleware('isAdmin')->group(function () {
     // говорит о том, что доступ к данному маршруту возможен после успешной отработки middleware - 'auth'
-// middleware выполнив проверку и получив что пользователь не авторизирован, попытается перебросить на маршрут "/login"
+    // middleware выполнив проверку и получив что пользователь не авторизирован, попытается перебросить на маршрут "/login"
     Route::get('/', [MainController::class, 'index'])
         // ->middleware(['auth'])
         // ->middleware(\App\Http\Middleware\AdminMiddleware::class)
