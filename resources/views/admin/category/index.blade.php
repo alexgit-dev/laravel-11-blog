@@ -57,7 +57,8 @@
                             </div> <!-- /.card-body -->
                             <div class="card-footer clearfix">
 
-{{--                                php artisan vendor:publish --tag=laravel-pagination--}}
+                            {{-- https://laravel.com/docs/11.x/pagination#customizing-the-pagination-view --}}
+                            {{-- php artisan vendor:publish --tag=laravel-pagination --}}
 
                                 {{ $categories->links('vendor.pagination.bootstrap-5-admin') }}
                                 {{--<ul class="pagination pagination-sm m-0 float-end">
