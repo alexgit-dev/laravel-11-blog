@@ -21,6 +21,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{ route('categories.index') }}" class="nav-link">
+                        <i class="nav-icon bi bi-speedometer"></i>
+                        <p>Categories</p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="./generate/theme.html" class="nav-link">
                         <i class="nav-icon bi bi-palette"></i>
                         <p>Theme Generate</p>
