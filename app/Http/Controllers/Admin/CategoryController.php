@@ -13,7 +13,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::query()->paginate(1);
+        $categories = Category::query()->paginate(10);
 
         return view(
             'admin.category.index',
@@ -26,7 +26,10 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        //session()->flash('success', 'OK');
+        //session()->flash('error', 'NOT OK');
+
+        return view('admin.category.create');
     }
 
     /**
@@ -34,7 +37,21 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'title' => ['required', 'max:255', 'min:5'],
+            'meta_desc' => ['max:255'],
+        ]);
+
+        // dd($validated);
+
+        Category::query()->create($validated);
+
+        // для генерации слагов
+        // https://github.com/cviebrock/eloquent-sluggable
+
+        return redirect()
+            ->route('categories.index')
+            ->with('success', 'Category [' . $validated['title'] . '] added successfully');
     }
 
     /**
@@ -50,7 +67,12 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $category = Category::query()->findOrFail($id);
+
+        return view(
+            'admin.category.edit',
+            ['category' => $category]
+        );
     }
 
     /**
@@ -58,7 +80,18 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $category = Category::query()->findOrFail($id);
+
+        $validated = $request->validate([
+            'title' => ['required', 'max:255', 'min:5'],
+            'meta_desc' => ['max:255'],
+        ]);
+
+        $category->update($validated);
+
+        return redirect()
+            ->route('categories.index')
+            ->with('success', 'Category [' . $validated['title'] . '] updated successfully');
     }
 
     /**

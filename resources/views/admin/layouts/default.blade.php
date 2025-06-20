@@ -114,9 +114,20 @@
     @include('admin.layouts.sidebar')
     <!--end::Sidebar-->
 
-    <!--begin::App Main-->
-    @yield('content')
-    <!--end::App Main-->
+
+
+    <main class="app-main">
+
+        <!-- begin::ErrorsBlock -->
+        @include('admin.layouts.errors-block')
+        <!-- end::ErrorsBlock -->
+
+        <!--begin::App Main-->
+        @yield('content')
+        <!--end::App Main-->
+    </main>
+
+
 
     <!--begin::Footer-->
     @include('admin.layouts.footer')
