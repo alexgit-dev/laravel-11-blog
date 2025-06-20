@@ -99,6 +99,12 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $category = Category::query()->findOrFail($id);
+        $title = $category->title;
+        $category->delete();
+
+        return redirect()
+            ->route('categories.index')
+            ->with('success', 'Category [' . $title . '] DELETED successfully');
     }
 }
