@@ -13,6 +13,19 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.3.0/styles/overlayscrollbars.min.css" integrity="sha256-dSokZseQNT08wYEWiz5iLI8QPlKxG+TswNRD8k35cpg=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css" integrity="sha256-Qsx5lrStHZyR9REqhUF8iQt73X06c8LGIUPzpOhwRrI=" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('assets/admin/css/adminlte.css') }}">
+
+    <style>
+        .cke_notifications_area {
+            display: none;
+        }
+
+        label.required::before {
+            content: "* ";
+            color: #ff0000;
+            font-weight: 700;
+        }
+    </style>
+
 </head>
 
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary"> <!--begin::App Wrapper-->
@@ -141,6 +154,7 @@
 <script src="{{ asset('assets/admin/js/adminlte.js') }}"></script>
 <script src="{{ asset('assets/js/jquery-3.7.1.min.js') }}"></script>
 <script src="{{ asset('assets/admin/js/main.js') }}"></script>
+<script src="{{ asset('assets/admin/ckeditor/ckeditor.js') }}"></script>
 
 </body><!--end::Body-->
 
