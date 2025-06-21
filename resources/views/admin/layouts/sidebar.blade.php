@@ -22,8 +22,13 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('categories.index') }}" class="nav-link">
-                        <i class="nav-icon bi bi-speedometer"></i>
+                        <i class="nav-icon bi bi-card-list"></i>
                         <p>Categories</p>
+                    </a>
+                </li>
+                <a href="{{ route('posts.index') }}" class="nav-link">
+                        <i class="nav-icon bi bi-pencil-square"></i>
+                        <p>Posts</p>
                     </a>
                 </li>
                 <li class="nav-item">
